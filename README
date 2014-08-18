@@ -1,0 +1,32 @@
+说明：
+	本程序运行环境：ubuntu操作系统。
+	本程序与网络中大部分802.1程序不同，没有使用pcap库和libinet库，因此无需安装库。
+	程序包含两个目录: 一个拨号器，在dialdir中；另一个是控制拨号器的，在ctrldir中。
+	在ctrldir目录中，包含了一个logon.sh的脚本，可以用于登录，包含了ip分配的过程。
+	如果不用logon.sh脚本，可以选择使用ctrldir目录中的house_ctrl程序控制拨号器,输入命令./house_ctrl -h可查看house_ctrl用法。
+	程序config信息放在/etc/house_802x_conf文件，通过house_ctrl程序生成，该文件包括用户名，加密密码，网卡口。当程序提示网卡不存在时候，可以通过"ifconfig -a"查看使用网卡名称，然后重新生成config文件。
+
+
+
+
+用法：
+	cd house_8021x_v1.0
+
+	第一次使用，需要生成conf文件:
+	cd ./ctrldir
+	sudo ./house_dial -cfg
+
+	运行拨号器:
+		cd ./dialdir
+		make clean; make
+		sudo ./house_dial
+
+	控制端:
+		cd ./ctrldir
+		make clean; make
+		./logon.sh
+
+联系方式：
+	kidult1107@126.com
+	house
+	如发现程序bug，请联系我，非常感谢！
