@@ -1,5 +1,4 @@
-This is my first project, i have done it by myself.
-
+it's a project which build a program to surf the Internet.
 EXPLAIN:
 	OS: ubuntu
 	
